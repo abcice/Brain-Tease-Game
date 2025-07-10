@@ -29,3 +29,241 @@ Lifeline and reset confirmations appear like a small modal or dropdown
 
 On win/loss screen, center everything with bold colors or animations
  */
+ #welcome-page {
+    display: flex;
+    flex-direction: column;
+    align-items:center;
+    justify-content: start;
+    padding-top: 40px;
+    font-family: Fredoka, sans-serif;
+ }   
+ #welcome-page h1 {
+         text-align: center;
+         font-size: 40px;
+         margin-bottom: 20px;
+
+    }
+#welcome-page input {
+    padding: 10px 15px;
+    font-size: 16px;
+    border: 2px solid #aa2727;
+    border-radius: 8px;
+    margin-bottom: 10px;
+    text-align: center;
+}
+#save-btn {
+    padding: 10px 20px;
+    margin-bottom: 20px;
+    background-color: #ccc;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+}
+#save-btn:hover {
+transform: scale(1.05);
+background-color: #b9b4b4;
+}
+#start-btn {
+    padding: 12px 30px;
+    background-color: #6c63ff;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    transition: transform 0.2s ease;
+}
+#start-btn:hover {
+    transform: scale(1.05);
+    background-color: #594fe0;
+}
+
+#Category {
+    display: flex;
+    flex-direction: column;
+    font-family: Rubik, sans-serif;
+    text-align: center;
+}
+#Category button {
+    padding: 20px;
+    margin: 15px 10px;
+    font-size: 20px;
+    font-weight: 600;
+    border: none;
+    border-radius: 12px;
+    background: linear-gradient(135deg, #6c63ff, #8a79ff);
+    color: white;
+    cursor: pointer;
+    box-shadow: 0 6px 12px rgba(108, 99, 255, 0.4);
+    min-width: 180px;
+}
+#Category button:hover {
+  background: linear-gradient(135deg, #594fe0, #7266ff);
+  box-shadow: 0 10px 20px rgba(89, 79, 224, 0.6);
+}
+
+#info {
+    display: flex;
+    justify-content: space-between;
+}
+#infoBox {
+                width: 100px;
+                height: 10px;
+                border: 2px solid #333;
+                padding: 20px;
+                font-size: 18px;
+                background-color: #f0f0f0;
+                border-radius: 8px;
+                text-align: center;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                }
+#Timer {
+                width: 80px;
+                height: 10px;
+                border: 2px solid #333;
+                padding: 20px;
+                font-size: 18px;
+                background-color: #f0f0f0;
+                border-radius: 8px;
+                text-align: center;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                }
+                #options {
+                    display:grid;
+                    grid-template-columns: 1fr 1fr;
+                    gap: 20px;   
+                }
+                #options button {
+                      padding: 18px 25px;
+                      font-size: 20px;
+                      border: none;
+                      border-radius: 12px;
+                      background-color: #6c63ff;
+                      color: white;
+                      font-weight: bold;
+                      cursor: pointer;
+                      
+                }
+                #Qtn {
+                    text-align: center;
+                    font-size: 50px;
+                }
+                #btm-btn {
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: space-between;
+                }
+                #btm-btn button {
+                    padding: 12px 25px;
+                    margin-top: 30px;
+                    border: none;
+                    border-radius: 25px;
+                    font-weight: 600;
+                    font-size: 16px;
+                    background-color: #ff6f61;
+                    color: white;
+                    cursor: pointer;
+
+                }
+                #btn-btn button :hover {
+                        background-color: #e65b4d;
+                        transform: scale(1.05);
+
+
+                }
+                #resetmsg {
+                    position: fixed;
+                    top: 0;
+                    left: 0;
+                    width: 100vw;
+                    height: 100vh;
+                    background-color: rgba(0, 0, 0, 0.5); /* dark overlay */
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    z-index: 1000;
+                    display: none;
+
+                }
+                #resetmsg .msg-box {
+                        background-color: white;
+                        padding: 30px 40px;
+                        border-radius: 16px;
+                        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+                        text-align: center;
+                        max-width: 400px;
+                        font-family: Fredoka, sans-serif;
+                        color: #333;
+                        }
+                        
+                #resetmsg .msg-box h2 {
+                font-size: 24px;
+                margin-bottom: 20px;
+                }
+                #resetmsg .msg-box button {
+                        padding: 10px 20px;
+                        margin: 0 10px;
+                        font-size: 16px;
+                        font-weight: bold;
+                        border: none;
+                        border-radius: 10px;
+                        cursor: pointer;
+                        transition: background-color 0.2s ease;
+                }
+                
+                #resetmsg .msg-box #yes {
+                        background-color: #c0392b;
+                        color: white;
+                }
+                #resetmsg .msg-box #yes:hover {
+                            background-color: #962d22;
+                        }
+                #resetmsg .msg-box #no {
+                    background-color: #95a5a6;
+                    color: white;
+                }
+                #resetmsg .msg-box #no :hover {
+                    background-color: #7f8c8d;
+                }
+                   
+                #lifelns {
+                    position: fixed;
+                    top: 0;
+                    left: 0;
+                    width: 100vw;
+                    height: 100vh;
+                    background-color: rgba(0, 0, 0, 0.5);
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    z-index: 1000;
+                    /* display: none;  */
+                }
+                #lifelns .life-box {
+                background-color: white;
+                padding: 30px 40px;
+                border-radius: 16px;
+                box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+                text-align: center;
+                max-width: 400px;
+                font-family: Fredoka, sans-serif;
+                }
+                
+                 #welcome-page {
+                    display: none;
+                }
+                #Category {
+                    display: none;
+                }
+/* #Category, */
+/* #Question-pg,
+#ResultPg {
+            display: none;
+                } */ 

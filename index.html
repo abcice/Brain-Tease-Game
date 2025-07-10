@@ -57,3 +57,82 @@ Show a message: "You have lost"
 Include a funny or sad image
 
 Show a Play Again button -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script defer src="./app.js"></script>
+    <link rel="stylesheet" href="./style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bitcount+Grid+Double:wght@100..900&family=Fredoka:wght@300..700&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bitcount+Grid+Double:wght@100..900&family=Fredoka:wght@300..700&display=swap" rel="stylesheet">
+    <title>Brain tease</title>
+</head>
+<body>
+    <div id="welcome-page">
+        <h1>Welcome to Brain tease</h1>
+        <img src="https://i.imgur.com/RajOnML.png" alt="smiling brain image" style="width: 200px;">
+        <input type="text" placeholder="Your name" id="player-name">
+        <button id="save-btn" type="button">Save</button>
+        <button id="start-btn" type="button">Start Quiz</button>
+
+    </div>
+    <div id="Category">
+        <h1>Choose a category</h1>
+        <button id="Scientific" type="button">Scientific</button>
+        <button id="General" type="button">General</button>
+    </div>
+    <div id="Question-pg">
+        <div id="info">
+            <div id="infoBox">Name-Score</div>
+            <div id="Timer">Time:</div>
+        </div>
+        <div id="qbox">
+            <h2 id="Qno">Question No.</h2>
+            <div class="Qtn-box">
+                <div id="Qtn">Question</div>
+                <div id="options">
+                    <button id="opA" type="button">option A</button>
+                    <button id="opB" type="button">option B</button>
+                    <button id="opC" type="button">option C</button>
+                    <button id="opD" type="button">option D</button>
+                </div>
+        </div>
+
+        </div>
+        <div id="btm-btn">
+            <button id="Life" type="button">Life lines</button>
+            <button id="Reset" type="button">Reset</button>
+        </div>
+        <div id="resetmsg">
+            <div class="msg-box">
+                <h2>Are you sure?</h2>
+                <button id="yes" type="button">Yes</button>
+                <button id="no" type="button">No</button>
+            </div>
+        </div>
+        <div id="lifelns">
+            <div class="life-box">
+                <h2>Choose a life line</h2>
+                <button id="hint" type="button">Hint</button>
+                <button id="Rmv" type="button">Remove 2 options</button>
+                <button id="skip" type="button">Skip the question</button>
+            </div>
+            </div>
+
+    </div>
+    <div id="ResultPg">
+        <div id="ResultMsg">
+            Congratulations You won!
+        </div>
+        <button id="play-again" type="button">Play again</button>
+
+    </div>
+    
+</body>
+</html>
