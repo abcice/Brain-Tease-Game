@@ -1,4 +1,4 @@
-# QuizMaster Challenge
+# Brain tease
 
 ## Description
 A fun and interactive quiz game where users can choose between scientific or historical questions, test their knowledge, and challenge themselves with limited lifelines.
