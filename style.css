@@ -1,0 +1,31 @@
+/* General Styling
+Use a friendly, readable font
+
+Keep the background clean and light
+
+Center most content
+
+Use rounded corners and shadows for buttons and boxes to look modern
+
+Layout
+Welcome screen: Centered layout with space between title, image, input, and button
+
+Game screen:
+
+Top bar split between name/score on the left and timer on the right
+
+Question and image centered
+
+Answer buttons in two rows
+
+Lifeline and Reset buttons pinned to the bottom corners
+
+Use hidden/display toggle to switch between screens (not actual pages)
+
+Special Effects
+Timer changes to red and flashes when time is almost out (CSS animation)
+
+Lifeline and reset confirmations appear like a small modal or dropdown
+
+On win/loss screen, center everything with bold colors or animations
+ */
