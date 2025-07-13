@@ -41,6 +41,7 @@ On win/loss screen, center everything with bold colors or animations
          text-align: center;
          font-size: 40px;
          margin-bottom: 20px;
+         
 
     }
 #welcome-page input {
@@ -151,6 +152,10 @@ background-color: #b9b4b4;
                       cursor: pointer;
                       
                 }
+                #options button:hover {
+                      background: linear-gradient(135deg, #594fe0, #7266ff);
+                      box-shadow: 0 10px 20px rgba(89, 79, 224, 0.6);
+                }
                 #Qtn {
                     text-align: center;
                     font-size: 50px;
@@ -244,9 +249,10 @@ background-color: #b9b4b4;
                     justify-content: center;
                     align-items: center;
                     z-index: 1000;
-                    /* display: none;  */
+                    display: none; 
                 }
                 #lifelns .life-box {
+                position: relative;
                 background-color: white;
                 padding: 30px 40px;
                 border-radius: 16px;
@@ -255,15 +261,100 @@ background-color: #b9b4b4;
                 max-width: 400px;
                 font-family: Fredoka, sans-serif;
                 }
-                
-                 #welcome-page {
-                    display: none;
+                #lifelns .life-box button {
+
+                    padding: 12px;
+                    margin: 10px 0;
+                    font-size: 16px;
+                    font-weight: bold;
+                    border: none;
+                    border-radius: 10px;
+                    cursor: pointer;
+                    color:white
                 }
-                #Category {
-                    display: none;
+                #lifelns #hint {
+                    background-color: #3498db ;
                 }
-/* #Category, */
-/* #Question-pg,
+                #lifelns #hint:hover{
+                    background-color: #2c80b4;
+                }
+                #lifelns #Rmv {
+                    background-color: #f39c12 ;
+                }
+                #lifelns #Rmv:hover {
+                    background-color: #d78c0c;
+                }
+                #lifelns #skip {
+                    background-color: #27ae60;
+                }
+                #lifelns #skip:hover {
+                    background-color: #219150;
+                }
+                .close {
+                    position: absolute;
+                    top : 20px;
+                    right: 25px;
+                    font-size: 28px;
+                    font-weight: bold;
+                    color: #888;
+                    cursor: pointer;
+
+                }
+                #ResultPg {
+                    position: fixed;
+                    top: 0;
+                    left: 0;
+                    width: 100vw;
+                    height: 100vh;
+                    background: linear-gradient(to right, #6c63ff, #8a79ff);
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    justify-content: center;
+                    font-family: Fredoka, sans-serif;
+                    color:white;
+                    text-align: center;
+                    z-index: 1000;
+                    pad: 30px;
+                }
+                #ResultMsg {
+                    font-size: 36px;
+                    font-weight: bold;
+                    margin-bottom: 30px;
+
+                }
+                .close:hover {
+                    color: #333;
+                }
+            .option-btn {
+                background-color: white;
+                color: black;
+                border: 2px solid #ccc;
+                cursor: pointer;
+            }
+            .option-btn:hover {
+                background-color: #ccc;
+
+            }
+            /* .correct {
+                background-color: green;
+                color: white;
+                cursor: default;
+            }
+            .wrong {
+                background-color: red;
+                color: white;
+                cursor: default;
+            }
+            .correct:hover,
+            .wrong:hover {
+                background-color: inherit;
+            }  */
+
+       
+
+#Category,
+#Question-pg,
 #ResultPg {
             display: none;
-                } */ 
+                } 
