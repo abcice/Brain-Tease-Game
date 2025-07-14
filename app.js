@@ -382,13 +382,16 @@ const updateInfo = () => {
 }
 
 const gameStatus = () => {
+    resultPg.classList.remove("result-win", "result-lose");
   if (score === 100) {
+    resultPg.classList.add("result-win")
+    resultMsg.textContent = ` Congratulations ${playerName}!! You won!!! `;
     qtnPg.style.display = 'none';
     resultPg.style.display = 'flex';
-    resultMsg.textContent = `Congratulations ${playerName}!! You won!!!`
     return true;
   }
   if (wrongQ === 3) {
+    resultPg.classList.add('result-lose');
     qtnPg.style.display = 'none';
     resultPg.style.display = "flex";
     resultMsg.textContent = `You lost, try again`
@@ -505,3 +508,8 @@ yesReset.addEventListener('click', () => {
 noReset.addEventListener('click', () =>{
   resetScreen.style.display = 'none';
 });
+
+//---Result page---//
+playAgain.addEventListener('click', () => {
+  newGame();
+})
