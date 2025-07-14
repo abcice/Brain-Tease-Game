@@ -259,6 +259,8 @@ let playerName = '';
 let qtnType 
 let qIndex = 0;
 let score = 0
+let alreadyAnswered = false;
+let wrongQ = 0
 // ------constants------//
         //-pages-//
 const welcomePg = document.querySelector('#welcome-page');
@@ -270,6 +272,7 @@ const nameInput = document.querySelector('#player-name');
         //-text-//
 const qtnText = document.querySelector('#Qtn');
 const qtnNo = document.querySelector('#Qno');
+const resultMsg = document.querySelector('#ResultMsg');
         //-information-//
 const info = document.querySelector('#infoBox');
         //-buttons-//
@@ -281,8 +284,10 @@ const opA = document.querySelector('#opA');
 const opB = document.querySelector('#opB');
 const opC = document.querySelector('#opC');
 const opD = document.querySelector('#opD');
+const nextBtn = document.querySelector('#nextbtn');
 
 //----functions------///
+
 const shuffleQ = (array) => {
     return array
     .map(value => ({ value, sort: Math.random() }))
@@ -306,6 +311,22 @@ const updateInfo = () => {
     info.textContent = `Player: ${playerName}  Score: ${score}`;
 }
 
+const gameStatus = () => {
+  if (score === 100) {
+    qtnPg.style.display = 'none';
+    resultPg.style.display = 'flex';
+    resultMsg.textContent = `Congratulations ${playerName}!! You won!!!`
+    return true;
+  }
+  if (wrongQ === 3) {
+    qtnPg.style.display = 'none';
+    resultPg.style.display = "flex";
+    resultMsg.textContent = `You lost, try again`
+    return true;
+  }
+  return false;
+
+}
 const checkAnswer = (selectedOption) => {
     const currentQ = qtnType[qIndex];
     const options = [opA, opB, opC, opD];
@@ -334,8 +355,11 @@ const checkAnswer = (selectedOption) => {
                 btn.classList.add('correct');
             }
         })
+        wrongQ+=1;
 
     }
+    alreadyAnswered = true;
+    gameStatus();
 
 }
 
@@ -384,3 +408,20 @@ opA.addEventListener('click', () => checkAnswer(opA.textContent));
 opB.addEventListener('click', () => checkAnswer(opB.textContent));
 opC.addEventListener('click', () => checkAnswer(opC.textContent));
 opD.addEventListener('click', () => checkAnswer(opD.textContent));
+
+nextBtn.addEventListener('click', () => {
+    if (!alreadyAnswered) return; 
+
+    qIndex++;
+    if (gameStatus()) return;
+
+    loadQuestion();
+
+    const options = [opA, opB, opC, opD];
+    options.forEach(btn => {
+        btn.disabled = false;
+        btn.classList.remove('answered', 'correct', 'wrong');
+    });
+
+    alreadyAnswered = false; 
+});
