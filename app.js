@@ -33,7 +33,8 @@
 //   DISPLAY result (correct or wrong)
 //the correct answer will be highlighted in green 
 //if the wrong answer was choosen it will be highlighted in red and the correct answer will be shown in green
-//   GO to next question or END if out of questions
+// the hover color will be removed and the button will be unclickable  
+// GO to next question or END if out of questions
 
 // IF player answered all questions:
 //   DISPLAY congratulations message with name + final score
@@ -308,7 +309,11 @@ const updateInfo = () => {
 const checkAnswer = (selectedOption) => {
     const currentQ = qtnType[qIndex];
     const options = [opA, opB, opC, opD];
-    options.forEach(btn => btn.disabled = true);
+    options.forEach(btn => {
+    btn.disabled = true;
+    btn.classList.add('answered');
+});
+
     
 
     if (selectedOption === currentQ.correct) {
@@ -316,19 +321,17 @@ const checkAnswer = (selectedOption) => {
         updateInfo();
         options.forEach(btn => {
             if (btn.textContent === currentQ.correct) {
-                btn.style.backgroundColor = 'green';
+                btn.classList.add('correct');
             }
         });
 
     } else {
         options.forEach(btn => {
             if (btn.textContent === selectedOption) {
-                btn.style.backgroundColr = 'red';
-                btn.style.color = 'white';
+                btn.classList.add('wrong');
             }
             if (btn.textContent === currentQ.correct) {
-                btn.style.backgroundColor = 'green';
-                btn.styl.color = 'white'
+                btn.classList.add('correct');
             }
         })
 

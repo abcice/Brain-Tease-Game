@@ -177,7 +177,7 @@ background-color: #b9b4b4;
                     cursor: pointer;
 
                 }
-                #btn-btn button :hover {
+                #btn-btn button:hover {
                         background-color: #e65b4d;
                         transform: scale(1.05);
 
@@ -234,7 +234,7 @@ background-color: #b9b4b4;
                     background-color: #95a5a6;
                     color: white;
                 }
-                #resetmsg .msg-box #no :hover {
+                #resetmsg .msg-box #no:hover {
                     background-color: #7f8c8d;
                 }
                    
@@ -326,7 +326,7 @@ background-color: #b9b4b4;
                 .close:hover {
                     color: #333;
                 }
-            .option-btn {
+            /* .option-btn {
                 background-color: white;
                 color: black;
                 border: 2px solid #ccc;
@@ -335,23 +335,38 @@ background-color: #b9b4b4;
             .option-btn:hover {
                 background-color: #ccc;
 
-            }
-            /* .correct {
-                background-color: green;
+            } */
+            .correct {
+                background-color: green!important;
                 color: white;
                 cursor: default;
             }
             .wrong {
-                background-color: red;
+                background-color: red!important;
                 color: white;
                 cursor: default;
             }
-            .correct:hover,
-            .wrong:hover {
-                background-color: inherit;
-            }  */
 
-       
+            #options button.answered:hover {
+            background: inherit !important;
+            box-shadow: none !important;
+            transform: none !important;
+            cursor: default !important;
+        }
+
+
+
+            #options button.answered {
+            pointer-events: none;
+            opacity: 0.8;
+        }
+        #options button.answered:hover {
+        transform: none;
+        cursor: default;
+    }
+
+
+
 
 #Category,
 #Question-pg,
