@@ -386,6 +386,12 @@ background-color: #b9b4b4;
         background-color: #219150;
     }
 
+    @keyframes flash {
+  0% { opacity: 1; }
+  50% { opacity: 0.4; }
+  100% { opacity: 1; }
+}
+
 
 
 

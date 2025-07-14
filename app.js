@@ -261,7 +261,7 @@ let qIndex = 0;
 let score = 0;
 let alreadyAnswered = false;
 let wrongQ = 0;
-let initalTime = 60;
+let remainingTime = 60;
 let runningTime;
 
 // ------constants------//
@@ -293,18 +293,48 @@ const nextBtn = document.querySelector('#nextbtn');
 //----functions------///
 
 const timeCounter = () => {
-  timer.textContent = `Time:${initalTime} `;
+  remainingTime = 60;
+  timer.textContent = `Time:${remainingTime} `;
+  timer.style.color = '' ;
+  timer.style.animation = '' ;
+
   clearInterval(runningTime);
+
   runningTime = setInterval(() => {
-    initalTime--;
-    timer.textContent = `Time:${initalTime}`
-  })
+    remainingTime--;
+    timer.textContent = `Time: ${remainingTime}`;
+    if (remainingTime <= 10) {
+      timer.style.color = 'red';
+      timer.style.animation = 'flash 1s infinite';
+    }
+    if (remainingTime === 0) {
+      clearInterval(runningTime);
+      timeOut ()
+    }
+    
+  }, 1000);
 }
+
 const shuffleQ = (array) => {
     return array
     .map(value => ({ value, sort: Math.random() }))
     .sort((a, b) => a.sort - b.sort)
     .map(({ value }) => value);
+}
+
+const timeOut = () => {
+  const currentQ = qtnType[qIndex];
+  const options = [opA, opB, opC, opD];
+  options.forEach(btn => {
+    btn.disabled = true
+    btn.classList.add('answered');
+    if (btn.textContent === currentQ.correct) {
+        btn.classList.add('correct');
+    }
+  });
+  wrongQ++;
+  alreadyAnswered = true;
+  gameStatus();
 }
 
 const loadQuestion = () => {
@@ -317,6 +347,10 @@ const loadQuestion = () => {
     opB.textContent = shuffleOp[1];
     opC.textContent = shuffleOp[2];
     opD.textContent = shuffleOp[3];
+    timeCounter();
+    timer.style.color = '';
+    timer.style.animation = '';
+
 
 }
 const updateInfo = () => {
@@ -371,6 +405,7 @@ const checkAnswer = (selectedOption) => {
 
     }
     alreadyAnswered = true;
+    clearInterval(runningTime);
     gameStatus();
 
 }
