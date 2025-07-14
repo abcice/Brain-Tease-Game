@@ -256,11 +256,14 @@ const generalQ = [
 
 //-------Variables------//
 let playerName = '';
-let qtnType 
+let qtnType ;
 let qIndex = 0;
-let score = 0
+let score = 0;
 let alreadyAnswered = false;
-let wrongQ = 0
+let wrongQ = 0;
+let initalTime = 60;
+let runningTime;
+
 // ------constants------//
         //-pages-//
 const welcomePg = document.querySelector('#welcome-page');
@@ -275,6 +278,7 @@ const qtnNo = document.querySelector('#Qno');
 const resultMsg = document.querySelector('#ResultMsg');
         //-information-//
 const info = document.querySelector('#infoBox');
+const timer = document.querySelector('#Timer')
         //-buttons-//
 const saveBtn = document.querySelector('#save-btn');
 const startBtn = document.querySelector('#start-btn');
@@ -288,6 +292,14 @@ const nextBtn = document.querySelector('#nextbtn');
 
 //----functions------///
 
+const timeCounter = () => {
+  timer.textContent = `Time:${initalTime} `;
+  clearInterval(runningTime);
+  runningTime = setInterval(() => {
+    initalTime--;
+    timer.textContent = `Time:${initalTime}`
+  })
+}
 const shuffleQ = (array) => {
     return array
     .map(value => ({ value, sort: Math.random() }))
