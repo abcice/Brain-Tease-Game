@@ -270,6 +270,7 @@ const welcomePg = document.querySelector('#welcome-page');
 const category = document.querySelector('#Category');
 const qtnPg = document.querySelector('#Question-pg');
 const resultPg = document.querySelector('#ResultPg')
+const resetScreen = document.querySelector('#resetmsg')
         //-inputs-//
 const nameInput = document.querySelector('#player-name');
         //-text-//
@@ -289,9 +290,32 @@ const opB = document.querySelector('#opB');
 const opC = document.querySelector('#opC');
 const opD = document.querySelector('#opD');
 const nextBtn = document.querySelector('#nextbtn');
+const resetBtn = document.querySelector('#Reset');
+const yesReset = document.querySelector('#yes');
+const noReset = document.querySelector('#no');
+const playAgain = document.querySelector('#play-again');
 
 //----functions------///
-
+const newGame = () => {
+  score = 0;
+  qIndex = 0;
+  wrongQ = 0;
+  alreadyAnswered = false;
+  clearInterval(runningTime);
+  timer.textContent = `Time: ${remainingTime}`;
+  timer.style.color = '';
+  timer.style.animation = '';
+  qtnPg.style.display = 'none';
+  resultPg.style.display = 'none';
+  resetScreen.style.display ='none';
+  category.style.display ='flex';
+  const options = [opA, opB, opC, opD];
+  options.forEach(btn => {
+    btn.disabled = false;
+    btn.classList.remove('answered', 'correct', 'wrong');
+  });
+  updateInfo();
+};
 const timeCounter = () => {
   remainingTime = 60;
   timer.textContent = `Time:${remainingTime} `;
@@ -471,4 +495,13 @@ nextBtn.addEventListener('click', () => {
     });
 
     alreadyAnswered = false; 
+});
+resetBtn.addEventListener('click', () => {
+resetScreen.style.display = 'flex';
+});
+yesReset.addEventListener('click', () => {
+  newGame();
+});
+noReset.addEventListener('click', () =>{
+  resetScreen.style.display = 'none';
 });

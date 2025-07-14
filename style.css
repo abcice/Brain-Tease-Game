@@ -326,16 +326,7 @@ background-color: #b9b4b4;
                 .close:hover {
                     color: #333;
                 }
-            /* .option-btn {
-                background-color: white;
-                color: black;
-                border: 2px solid #ccc;
-                cursor: pointer;
-            }
-            .option-btn:hover {
-                background-color: #ccc;
 
-            } */
             .correct {
                 background-color: green!important;
                 color: white;
@@ -384,6 +375,10 @@ background-color: #b9b4b4;
     #nextbtn:hover {
         transform: scale(1.05);
         background-color: #219150;
+    }
+    #play-again{
+        border: none;
+
     }
 
     @keyframes flash {
