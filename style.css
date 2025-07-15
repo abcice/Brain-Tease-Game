@@ -12,26 +12,35 @@
          font-size: 40px;
          margin-bottom: 20px;
     }
-#welcome-page input {
-    padding: 10px 15px;
-    font-size: 16px;
-    border: 2px solid #aa2727;
-    border-radius: 8px;
-    margin-bottom: 10px;
-    text-align: center;
+#player-name {
+  width: 250px;
+  padding: 10px 15px;
+  font-size: 1rem;
+  border: 2px solid #ccc;
+  border-radius: 8px;
+  outline: none;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+}
+
+#player-name:focus {
+  border-color: #007bff;
+  box-shadow: 0 0 8px rgba(0, 123, 255, 0.3);
 }
 #save-btn {
-    padding: 10px 20px;
-    margin-bottom: 20px;
-    background-color: #ccc;
-    border: none;
-    border-radius: 8px;
-    font-size: 16px;
-    cursor: pointer;
+  margin-left: 10px;
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
 }
 #save-btn:hover {
 transform: scale(1.05);
-background-color: #b9b4b4;
+background-color: #0056b3;
 }
 #start-btn {
     padding: 12px 30px;
