@@ -514,7 +514,24 @@ hnt.addEventListener('click', () =>{
 hintClose.addEventListener('click', () => {
   hintPg.style.display = 'none';
 });
+rmv.addEventListener('click', () => {
+  if(alreadyAnswered || rmvUsed) return;
+  const currentQ =qtnType[qIndex];
+  const options = [opA, opB, opC, opD];
+  const wrongAnswers = options.filter(btn => btn.textContent !== currentQ.correct);
+  const optionsRemove = shuffleQ(wrongAnswers).slice(0,2);
+  optionsRemove.forEach(btn => {
+    btn.disabled = true;
+    btn.disabled = true;
+    btn.classList.add('faded-option');
 
+
+  });
+  rmvUsed = true;
+  disableBtn(rmv);
+  lifeScreen.style.display = 'none';
+
+});
 //---Result page---//
 playAgain.addEventListener('click', () => {
   newGame();

@@ -416,6 +416,11 @@ background-color: #b9b4b4;
     .hint-message .hint-close:hover {
     color: #333;
     }
+    .faded-option {
+    opacity: 0.5;
+    cursor: not-allowed;
+    }
+
 
 
 
