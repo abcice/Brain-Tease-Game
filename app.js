@@ -196,7 +196,7 @@ let qIndex = 0;
 let score = 0;
 let alreadyAnswered = false;
 let wrongQ = 0;
-let remainingTime = 60;
+let remainingTime = 30;
 let runningTime;
 let skipUsed = false;
 let hintUsed = false;
@@ -277,7 +277,7 @@ const newGame = () => {
   updateInfo();
 };
 const timeCounter = () => {
-  remainingTime = 60;
+  remainingTime = 30;
   timer.textContent = `Time:${remainingTime} `;
   timer.style.color = '' ;
   timer.style.animation = '' ;
