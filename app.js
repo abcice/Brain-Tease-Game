@@ -330,6 +330,11 @@ const loadQuestion = () => {
 
     qtnText.textContent = currentQ.question;
     qtnNo.textContent = `Question ${qIndex + 1}`;
+    const options = [opA, opB, opC, opD];
+    options.forEach(btn =>{
+      btn.disabled = false;
+      btn.classList.remove('faded-option', 'answered', 'correct', 'wrong');
+    })
     opA.textContent = shuffleOp[0];
     opB.textContent = shuffleOp[1];
     opC.textContent = shuffleOp[2];
