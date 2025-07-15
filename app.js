@@ -209,16 +209,23 @@ const category = document.querySelector('#Category');
 const qtnPg = document.querySelector('#Question-pg');
 const resultPg = document.querySelector('#ResultPg')
 const resetScreen = document.querySelector('#resetmsg');
-const lifeScreen = document.querySelector('#lifelns')
-        //-inputs-//
+const lifeScreen = document.querySelector('#lifelns');
+      //-inputs-//
 const nameInput = document.querySelector('#player-name');
-        //-text-//
+      //-text-//
 const qtnText = document.querySelector('#Qtn');
 const qtnNo = document.querySelector('#Qno');
 const resultMsg = document.querySelector('#ResultMsg');
-        //-information-//
+    //-information-//
 const info = document.querySelector('#infoBox');
 const timer = document.querySelector('#Timer');
+      //-hint page-//
+const hnt = document.querySelector('#hint');
+const hintPg = document.querySelector('#hint-page');
+const hintContent = document.querySelector('.hint-content')
+const hintClose = document.querySelector('.hint-close')
+const hintText = document.querySelector('#hint-text')
+
         //-buttons-//
 const saveBtn = document.querySelector('#save-btn');
 const startBtn = document.querySelector('#start-btn');
@@ -231,7 +238,6 @@ const opD = document.querySelector('#opD');
 const nextBtn = document.querySelector('#nextbtn');
 const lifeLines = document.querySelector('#Life');
 const xExit = document.querySelector('.close');
-const hnt = document.querySelector('#hint');
 const rmv = document.querySelector('#Rmv');
 const skip = document.querySelector('#skip');
 const resetBtn = document.querySelector('#Reset');
@@ -494,9 +500,22 @@ skip.addEventListener('click', () => {
   disableBtn(skip);
   lifeScreen.style.display = 'none';
 
-})
+});
+hnt.addEventListener('click', () =>{
+  if (alreadyAnswered || hintUsed) return;
+  const currentQ = qtnType[qIndex];
+  hintText.textContent = currentQ.hint;
+  hintPg.style.display = 'flex';
+  lifeScreen.style.display = 'none';
+  hintUsed = true;
+  disableBtn(hnt);
+
+});
+hintClose.addEventListener('click', () => {
+  hintPg.style.display = 'none';
+});
 
 //---Result page---//
 playAgain.addEventListener('click', () => {
   newGame();
-})
+});
