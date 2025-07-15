@@ -1,6 +1,3 @@
-// SET lifelines (removeTwo, hint, skip) to 3 uses total
-//   WAIT for:
-//     - Player uses lifeline → APPLY effect
 
 // ----- Objects------//
 const sciQ = [
@@ -219,12 +216,13 @@ const resultMsg = document.querySelector('#ResultMsg');
     //-information-//
 const info = document.querySelector('#infoBox');
 const timer = document.querySelector('#Timer');
+const progressBar = document.querySelector('#progress-bar');
       //-hint page-//
 const hnt = document.querySelector('#hint');
 const hintPg = document.querySelector('#hint-page');
-const hintContent = document.querySelector('.hint-content')
-const hintClose = document.querySelector('.hint-close')
-const hintText = document.querySelector('#hint-text')
+const hintContent = document.querySelector('.hint-content');
+const hintClose = document.querySelector('.hint-close');
+const hintText = document.querySelector('#hint-text');
 
         //-buttons-//
 const saveBtn = document.querySelector('#save-btn');
@@ -412,7 +410,9 @@ btn.disabled = true;
 btn.style.opacity = 0.5;
 btn.style.cursor = "default";
 }
-
+const updateProgress = () => {
+  progressBar.style.width = `${score}%`
+}
 //-------Event Listeners----//
         //--welcome page--//
 saveBtn.addEventListener('click', () => {
@@ -443,6 +443,7 @@ sciBtn.addEventListener('click', () => {
     qtnPg.style.display = 'block';
     updateInfo();
     loadQuestion();
+    updateProgress();
 });
 genralBtn.addEventListener('click', () => {
     qtnType = shuffleQ([...generalQ]);
@@ -452,7 +453,8 @@ genralBtn.addEventListener('click', () => {
     qtnPg.style.display = 'block';
     updateInfo();
     loadQuestion();
-})
+    updateProgress();
+});
         //--question page--//
 opA.addEventListener('click', () => checkAnswer(opA.textContent));
 opB.addEventListener('click', () => checkAnswer(opB.textContent));
@@ -477,6 +479,7 @@ nextBtn.addEventListener('click', () => {
     lifeLines.disabled = false;
     lifeLines.style.opacity = 1;
     lifeLines.style.cursor = "pointer";
+    updateProgress();
 });
 resetBtn.addEventListener('click', () => {
 resetScreen.style.display = 'flex';

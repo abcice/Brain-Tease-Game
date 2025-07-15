@@ -386,7 +386,24 @@ background-color: #0056b3;
     opacity: 0.5;
     cursor: not-allowed;
     }
-                /* result page */
+    #progress-container {
+    width: 100%;
+    background-color: #ccc;
+    margin-top: 10px;
+    height: 10px;
+    border-radius: 5px;
+    }
+
+
+#progress-bar {
+  height: 10px;
+  background-color: #4caf50;
+  width: 0%; 
+  transition: width 0.3s ease;
+}
+
+
+            /*--- result page--- */
                 #ResultPg {
                 position: fixed;
                 top: 0;
