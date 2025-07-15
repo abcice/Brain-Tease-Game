@@ -90,6 +90,96 @@ const sciQ = [
     options: ['Electron cloud', 'Nucleus', 'Shell', 'Orbit'],
     correct: 'Nucleus',
     hint: 'It contains protons and neutrons.'
+  },
+  {
+    question: 'Which gas is essential for human respiration?',
+    options: ['Oxygen', 'Carbon Dioxide', 'Nitrogen', 'Hydrogen'],
+    correct: 'Oxygen',
+    hint: 'It makes up about 21% of Earth’s atmosphere.'
+  },
+  {
+    question: 'What is the center of our solar system?',
+    options: ['Earth', 'Sun', 'Moon', 'Jupiter'],
+    correct: 'Sun',
+    hint: 'It is a massive star.'
+  },
+  {
+    question: 'What is the powerhouse of the cell?',
+    options: ['Nucleus', 'Mitochondria', 'Ribosome', 'Chloroplast'],
+    correct: 'Mitochondria',
+    hint: 'It produces energy for the cell.'
+  },
+  {
+    question: 'How many bones are in the adult human body?',
+    options: ['206', '201', '210', '199'],
+    correct: '206',
+    hint: 'It’s just over 200.'
+  },
+  {
+    question: 'Which organ is primarily responsible for pumping blood?',
+    options: ['Lungs', 'Liver', 'Heart', 'Kidney'],
+    correct: 'Heart',
+    hint: 'It beats continuously throughout life.'
+  },
+  {
+    question: 'What is the freezing point of water in Fahrenheit?',
+    options: ['0°F', '32°F', '100°F', '212°F'],
+    correct: '32°F',
+    hint: 'It’s different from Celsius.'
+  },
+  {
+    question: 'What kind of energy does a battery produce?',
+    options: ['Kinetic', 'Solar', 'Chemical', 'Magnetic'],
+    correct: 'Chemical',
+    hint: 'It involves chemical reactions.'
+  },
+  {
+    question: 'Which planet has the most moons?',
+    options: ['Jupiter', 'Saturn', 'Mars', 'Neptune'],
+    correct: 'Saturn',
+    hint: 'It has beautiful rings.'
+  },
+  {
+    question: 'Which part of the human eye detects light?',
+    options: ['Iris', 'Retina', 'Cornea', 'Lens'],
+    correct: 'Retina',
+    hint: 'It sends signals to the brain.'
+  },
+  {
+    question: 'What metal is liquid at room temperature?',
+    options: ['Gold', 'Mercury', 'Aluminum', 'Iron'],
+    correct: 'Mercury',
+    hint: 'It’s used in old thermometers.'
+  },
+  {
+    question: 'Which planet is known for its rings?',
+    options: ['Earth', 'Venus', 'Saturn', 'Uranus'],
+    correct: 'Saturn',
+    hint: 'They are visible even with small telescopes.'
+  },
+  {
+    question: 'What type of blood cells fight infections?',
+    options: ['Red', 'White', 'Platelets', 'Plasma'],
+    correct: 'White',
+    hint: 'They are part of the immune system.'
+  },
+  {
+    question: 'What is the main gas in Earth’s atmosphere?',
+    options: ['Oxygen', 'Carbon Dioxide', 'Nitrogen', 'Hydrogen'],
+    correct: 'Nitrogen',
+    hint: 'It makes up around 78%.'
+  },
+  {
+    question: 'Which organ filters blood in the human body?',
+    options: ['Heart', 'Kidney', 'Liver', 'Lungs'],
+    correct: 'Kidney',
+    hint: 'You have two of them.'
+  },
+  {
+    question: 'Which unit is used to measure electric current?',
+    options: ['Volts', 'Ohms', 'Watts', 'Amperes'],
+    correct: 'Amperes',
+    hint: 'Often shortened to "amps."'
   }
 ];
 
@@ -183,6 +273,96 @@ const generalQ = [
     options: ['Leonardo da Vinci', 'Michelangelo', 'Picasso', 'Van Gogh'],
     correct: 'Leonardo da Vinci',
     hint: 'He was also an inventor.'
+  },
+  {
+    question: 'What is the number of hours in one full Earth rotation?',
+    options: ['24', '12', '36', '48'],
+    correct: '24',
+    hint: 'How many hours are in a day'
+  },
+  {
+    question: 'What is the tallest animal in the world?',
+    options: ['Elephant', 'Giraffe', 'Horse', 'Kangaroo'],
+    correct: 'Giraffe',
+    hint: 'It has a very long neck.'
+  },
+  {
+    question: 'What color is the sky on a clear day?',
+    options: ['Green', 'Blue', 'Red', 'White'],
+    correct: 'Blue',
+    hint: 'It’s the color most often drawn in pictures.'
+  },
+  {
+    question: 'How many legs does an insect have?',
+    options: ['4', '6', '8', '10'],
+    correct: '6',
+    hint: 'It’s less than a spider.'
+  },
+  {
+    question: 'What is the capital city of the United Kingdom?',
+    options: ['Paris', 'London', 'Berlin', 'Dublin'],
+    correct: 'London',
+    hint: 'It’s home to Big Ben.'
+  },
+  {
+    question: 'Which fruit is yellow and curved?',
+    options: ['Apple', 'Banana', 'Mango', 'Grapes'],
+    correct: 'Banana',
+    hint: 'Monkeys love it.'
+  },
+  {
+    question: 'What do bees make?',
+    options: ['Silk', 'Milk', 'Honey', 'Juice'],
+    correct: 'Honey',
+    hint: 'It’s sweet and sticky.'
+  },
+  {
+    question: 'Which country is shaped like a boot?',
+    options: ['Spain', 'Italy', 'India', 'Canada'],
+    correct: 'Italy',
+    hint: 'It’s in southern Europe.'
+  },
+  {
+    question: 'Which holiday celebrates costumes and candy?',
+    options: ['Christmas', 'Halloween', 'Easter', 'Thanksgiving'],
+    correct: 'Halloween',
+    hint: 'It falls on October 31.'
+  },
+  {
+    question: 'What color are school buses usually?',
+    options: ['Red', 'Blue', 'Yellow', 'Green'],
+    correct: 'Yellow',
+    hint: 'It’s bright and easy to see.'
+  },
+  {
+    question: 'Which is the smallest continent?',
+    options: ['Africa', 'Europe', 'Australia', 'Antarctica'],
+    correct: 'Australia',
+    hint: 'It’s also a country.'
+  },
+  {
+    question: 'What is a baby cat called?',
+    options: ['Puppy', 'Kitten', 'Cub', 'Calf'],
+    correct: 'Kitten',
+    hint: 'It rhymes with mitten.'
+  },
+  {
+    question: 'Which vegetable is known to make you cry?',
+    options: ['Carrot', 'Tomato', 'Onion', 'Lettuce'],
+    correct: 'Onion',
+    hint: 'It releases a chemical that irritates your eyes.'
+  },
+  {
+    question: 'What’s the largest mammal?',
+    options: ['Elephant', 'Whale', 'Hippo', 'Bear'],
+    correct: 'Whale',
+    hint: 'It lives in the ocean.'
+  },
+  {
+    question: 'Which direction does the sun rise from?',
+    options: ['North', 'South', 'East', 'West'],
+    correct: 'East',
+    hint: 'It’s opposite to sunset.'
   }
 ];
 
