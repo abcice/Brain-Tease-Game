@@ -142,12 +142,13 @@ background-color: #0056b3;
                       box-shadow: 0 10px 20px rgba(89, 79, 224, 0.6);
                 }
                 #Qtn {
-                    font-size: 1.8rem;
+                    font-size: 1.6rem;
                     font-weight: bold;
                     text-align: center;
                     color: #2c3e50;
                     margin-bottom: 1rem;
-                    line-height: 1.4;
+                    line-height: 1.5;
+                    padding: 0 1rem;
                 }
                 #btm-btn {
                     display: flex;
@@ -388,18 +389,19 @@ background-color: #0056b3;
     }
     #progress-container {
     width: 100%;
-    background-color: #ccc;
-    margin-top: 10px;
-    height: 10px;
-    border-radius: 5px;
+    background-color: #eee;
+    margin-top: 1rem 0;
+    height: 14px;
+    border-radius: 10px;
+    overflow: hidden;
     }
 
 
 #progress-bar {
-  height: 10px;
-  background-color: #4caf50;
+  height: 100%;
+  background: linear-gradient(90deg, #6c63ff, #ff6f61);
   width: 0%; 
-  transition: width 0.3s ease;
+  transition: width 0.4s ease;
 }
 
 
@@ -480,6 +482,16 @@ background-color: #0056b3;
 @keyframes fadeIn {
   from { opacity: 0; transform: scale(0.95); }
   to { opacity: 1; transform: scale(1); }
+}
+
+@media (max-width: 600px) {
+  #options {
+    grid-template-columns: 1fr;
+  }
+  #btm-btn {
+    flex-direction: column;
+    align-items: center;
+  }
 }
 
 
