@@ -27,3 +27,4 @@ A fun and interactive quiz game where users can choose between scientific or his
 
 - wireframe : https://excalidraw.com/#json=cXvQ7sX0m3XwzEPGxd2sG,81whqtMpzzBmBmkj86NksA
 - trello : https://trello.com/invite/b/686e721f97f8640fcc8656a7/ATTI70f7d8b06216e70ec00a441b0dcd8a357E93398B/brain-tease
+- Game website : https://brain-tease.surge.sh/
