@@ -475,14 +475,14 @@ const timeCounter = () => {
     }
     
   }, 1000);
-}
+};
 
 const shuffleQ = (array) => {
     return array
     .map(value => ({ value, sort: Math.random() }))
     .sort((a, b) => a.sort - b.sort)
     .map(({ value }) => value);
-}
+};
 
 const timeOut = () => {
   const currentQ = qtnType[qIndex];
@@ -500,7 +500,7 @@ const timeOut = () => {
   lifeLines.disabled = true;
   lifeLines.style.opacity = 0.5;
   lifeLines.style.cursor = "default";
-}
+};
 
 const loadQuestion = () => {
     const currentQ = qtnType[qIndex];
@@ -522,10 +522,10 @@ const loadQuestion = () => {
     timer.style.animation = '';
 
 
-}
+};
 const updateInfo = () => {
     info.textContent = `Player: ${playerName}  Score: ${score}`;
-}
+};
 
 const gameStatus = () => {
     resultPg.classList.remove("result-win", "result-lose");
@@ -545,7 +545,7 @@ const gameStatus = () => {
   }
   return false;
 
-}
+};
 const checkAnswer = (selectedOption) => {
     const currentQ = qtnType[qIndex];
     const options = [opA, opB, opC, opD];
@@ -584,15 +584,15 @@ const checkAnswer = (selectedOption) => {
     lifeLines.style.opacity = 0.5;
     lifeLines.style.cursor = "default";
 
-}
+};
 const disableBtn = (btn) => {
 btn.disabled = true;
 btn.style.opacity = 0.5;
 btn.style.cursor = "default";
-}
+};
 const updateProgress = () => {
   progressBar.style.width = `${score}%`
-}
+};
 //-------Event Listeners----//
         //--welcome page--//
 saveBtn.addEventListener('click', () => {
@@ -604,7 +604,7 @@ saveBtn.addEventListener('click', () => {
     else {
         alert('Please enter your name!')
     }
-})
+});
 startBtn.addEventListener('click', () => {
     if (playerName !== '') {
         welcomePg.style.display = 'none'

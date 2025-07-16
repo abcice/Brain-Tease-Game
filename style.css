@@ -167,7 +167,7 @@ background-color: #0056b3;
                     cursor: pointer;
 
                 }
-                #btn-btn button:hover {
+                #btm-btn button:hover {
                         background-color: #e65b4d;
                         transform: scale(1.05);
 
@@ -391,7 +391,7 @@ background-color: #0056b3;
     width: 100%;
     background-color: #eee;
     margin-top: 1rem 0;
-    height: 14px;
+    height: (14px, 1vw);
     border-radius: 10px;
     overflow: hidden;
     }
@@ -479,10 +479,6 @@ background-color: #0056b3;
   to { opacity: 1; transform: scale(1); }
 }
 
-@keyframes fadeIn {
-  from { opacity: 0; transform: scale(0.95); }
-  to { opacity: 1; transform: scale(1); }
-}
 
 @media (max-width: 600px) {
   #options {
