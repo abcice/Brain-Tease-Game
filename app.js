@@ -423,13 +423,13 @@ const yesReset = document.querySelector('#yes');
 const noReset = document.querySelector('#no');
 const playAgain = document.querySelector('#play-again');
 // ----Sound effects -----//
-const rightSound = new Audio('file:///C:/Users/Administrator/code/projects/Brain-Tease-Game/correct.mp3');
-const wrongSound = new Audio('file:///C:/Users/Administrator/code/projects/Brain-Tease-Game/wrong.mp3');
-const winSound = new Audio('file:///C:/Users/Administrator/code/projects/Brain-Tease-Game/win.mp3');
-const gameOver = new Audio('file:///C:/Users/Administrator/code/projects/Brain-Tease-Game/gameover.mp3');
-const clickSound = new Audio('file:///C:/Users/Administrator/code/projects/Brain-Tease-Game/click.mp3');
-const newGameSound = new Audio('file:///C:/Users/Administrator/code/projects/Brain-Tease-Game/newgame.mp3');
-const backGroundMusic = new Audio('file:///C:/Users/Administrator/code/projects/Brain-Tease-Game/background.mp3');
+const rightSound = new Audio('./correct.mp3');
+const wrongSound = new Audio('./wrong.mp3');
+const winSound = new Audio('./win.mp3');
+const gameOver = new Audio('');
+const clickSound = new Audio('./click.mp3');
+const newGameSound = new Audio('./newgame.mp3');
+const backGroundMusic = new Audio('./background.mp3');
 backGroundMusic.loop = true;
 //----functions------///
 const newGame = () => {
