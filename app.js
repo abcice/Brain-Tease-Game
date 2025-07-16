@@ -422,7 +422,15 @@ const resetBtn = document.querySelector('#Reset');
 const yesReset = document.querySelector('#yes');
 const noReset = document.querySelector('#no');
 const playAgain = document.querySelector('#play-again');
-
+// ----Sound effects -----//
+const rightSound = new Audio('file:///C:/Users/Administrator/code/projects/Brain-Tease-Game/correct.mp3');
+const wrongSound = new Audio('file:///C:/Users/Administrator/code/projects/Brain-Tease-Game/wrong.mp3');
+const winSound = new Audio('file:///C:/Users/Administrator/code/projects/Brain-Tease-Game/win.mp3');
+const gameOver = new Audio('file:///C:/Users/Administrator/code/projects/Brain-Tease-Game/gameover.mp3');
+const clickSound = new Audio('file:///C:/Users/Administrator/code/projects/Brain-Tease-Game/click.mp3');
+const newGameSound = new Audio('file:///C:/Users/Administrator/code/projects/Brain-Tease-Game/newgame.mp3');
+const backGroundMusic = new Audio('file:///C:/Users/Administrator/code/projects/Brain-Tease-Game/background.mp3');
+backGroundMusic.loop = true;
 //----functions------///
 const newGame = () => {
   score = 0;
@@ -532,6 +540,10 @@ const gameStatus = () => {
   if (score === 100) {
     resultPg.classList.add("result-win")
     resultMsg.textContent = ` Congratulations ${playerName}!! You won!!! `;
+    winSound.volume = .1
+    winSound.play()
+    backGroundMusic.pause();
+    backGroundMusic.currentTime = 0;
     qtnPg.style.display = 'none';
     resultPg.style.display = 'flex';
     return true;
@@ -541,6 +553,10 @@ const gameStatus = () => {
     qtnPg.style.display = 'none';
     resultPg.style.display = "flex";
     resultMsg.textContent = `You lost, try again`
+    gameOver.volume = .1
+    gameOver.play()
+    backGroundMusic.pause();
+    backGroundMusic.currentTime = 0;
     return true;
   }
   return false;
@@ -564,6 +580,8 @@ const checkAnswer = (selectedOption) => {
                 btn.classList.add('correct');
             }
         });
+        rightSound.volume = .1
+        rightSound.play()
 
     } else {
         options.forEach(btn => {
@@ -575,6 +593,8 @@ const checkAnswer = (selectedOption) => {
             }
         })
         wrongQ+=1;
+        wrongSound.volume = .1
+        wrongSound.play()
 
     }
     alreadyAnswered = true;
@@ -604,15 +624,18 @@ saveBtn.addEventListener('click', () => {
     else {
         alert('Please enter your name!')
     }
+    clickSound.play();
 });
 startBtn.addEventListener('click', () => {
     if (playerName !== '') {
+        clickSound.play();
         welcomePg.style.display = 'none'
         category.style.display = 'flex'
 
     } else {
         alert('Please enter your name first!');
     }
+
 });
         //--category--//
 sciBtn.addEventListener('click', () => {
@@ -624,6 +647,10 @@ sciBtn.addEventListener('click', () => {
     updateInfo();
     loadQuestion();
     updateProgress();
+    clickSound.play();
+    backGroundMusic.currentTime = 0;
+    backGroundMusic.play();
+
 });
 genralBtn.addEventListener('click', () => {
     qtnType = shuffleQ([...generalQ]);
@@ -634,6 +661,10 @@ genralBtn.addEventListener('click', () => {
     updateInfo();
     loadQuestion();
     updateProgress();
+    clickSound.play();
+    backGroundMusic.currentTime = 0;
+    backGroundMusic.play();
+
 });
         //--question page--//
 opA.addEventListener('click', () => checkAnswer(opA.textContent));
@@ -660,27 +691,36 @@ nextBtn.addEventListener('click', () => {
     lifeLines.style.opacity = 1;
     lifeLines.style.cursor = "pointer";
     updateProgress();
+    clickSound.play();
 });
 resetBtn.addEventListener('click', () => {
+clickSound.play();
 resetScreen.style.display = 'flex';
 });
 yesReset.addEventListener('click', () => {
+  clickSound.play();
+  backGroundMusic.currentTime = 0;
+  backGroundMusic.play();
   newGame();
 });
 noReset.addEventListener('click', () =>{
+  clickSound.play();
   resetScreen.style.display = 'none';
 });
 lifeLines.addEventListener('click', () => {
   if (lifeLines.disabled) return;
+  clickSound.play();
   lifeScreen.style.display = 'flex';
 
 });
 xExit.addEventListener('click', () => {
+  clickSound.play();
   lifeScreen.style.display = 'none';
 });
 skip.addEventListener('click', () => {
   if(alreadyAnswered || skipUsed) return;
   qIndex++ ;
+  clickSound.play();
   if(gameStatus()) return;
   loadQuestion();
   alreadyAnswered = false;
@@ -691,6 +731,7 @@ skip.addEventListener('click', () => {
 });
 hnt.addEventListener('click', () =>{
   if (alreadyAnswered || hintUsed) return;
+  clickSound.play();
   const currentQ = qtnType[qIndex];
   hintText.textContent = currentQ.hint;
   hintPg.style.display = 'flex';
@@ -700,10 +741,12 @@ hnt.addEventListener('click', () =>{
 
 });
 hintClose.addEventListener('click', () => {
+  clickSound.play();
   hintPg.style.display = 'none';
 });
 rmv.addEventListener('click', () => {
   if(alreadyAnswered || rmvUsed) return;
+  clickSound.play();
   const currentQ =qtnType[qIndex];
   const options = [opA, opB, opC, opD];
   const wrongAnswers = options.filter(btn => btn.textContent !== currentQ.correct);
@@ -722,5 +765,8 @@ rmv.addEventListener('click', () => {
 });
 //---Result page---//
 playAgain.addEventListener('click', () => {
+  newGameSound.play();
+  backGroundMusic.currentTime = 0;
+  backGroundMusic.play();
   newGame();
 });

@@ -319,10 +319,6 @@ background-color: #0056b3;
             pointer-events: none;
             opacity: 0.8;
         }
-        #options button.answered:hover {
-        transform: none;
-        cursor: default;
-    }
     #next {
         text-align: center;
         margin-top: 20px;
@@ -391,7 +387,7 @@ background-color: #0056b3;
     width: 100%;
     background-color: #eee;
     margin-top: 1rem 0;
-    height: (14px, 1vw);
+    height: min(14px, 1vw);
     border-radius: 10px;
     overflow: hidden;
     }
@@ -401,7 +397,8 @@ background-color: #0056b3;
   height: 100%;
   background: linear-gradient(90deg, #6c63ff, #ff6f61);
   width: 0%; 
-  transition: width 0.4s ease;
+  transition: width 0.4s ease-in-out, background-color 0.3s ease;
+
 }
 
 
