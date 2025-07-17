@@ -14,7 +14,7 @@ A fun and interactive quiz game where users can choose between scientific or his
 
 ## Features
 - 2 Quiz Categories: Science and History
-- 1-minute timer per question with red flashing warning
+- 30-Seconds timer per question with red flashing warning
 - Score tracking system
 - Lifelines: 3 total (50/50, hint, skip)
 - Player name registration and ranking system
